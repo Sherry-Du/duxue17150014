@@ -1,8 +1,7 @@
 Our group subject is subject 02;
 
-All 5 subjects have been finished;
+All 5 subjects have been finished, I put each subject in a folder ex_*.
 
-I put each subject in a folder ex_*.
 
 Group Members:
 

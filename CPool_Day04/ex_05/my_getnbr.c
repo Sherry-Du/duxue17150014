@@ -67,8 +67,6 @@ int my_getnbr(char const *str)
 			break;
 		}
 	}
-	printf("%d,%d\n",begin,end);
-	printf("%c\n",str[begin]);
 	if(end > begin)
 	{
 		int numLen = end - begin;

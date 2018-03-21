@@ -9,5 +9,6 @@ char *my_strncpy(char *dest, char const *src, int n)
 		i ++;
 	}
 	*dest='\0';
+	return dest;
 }
 

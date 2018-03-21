@@ -1,4 +1,4 @@
-#include<stdio.h>
+//#include<stdio.h>
 //int my_strlen(char const *str);
 
 int my_showstr(char const *str)
@@ -18,9 +18,5 @@ int my_showstr(char const *str)
 	}
 	return 0;
 }
-void main()
-{
-//int o = my_showstr("-1110");
-printf("0x%c\n",'\n');
-}
+
 

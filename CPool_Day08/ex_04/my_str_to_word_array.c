@@ -1,23 +1,39 @@
-#include<stdio.h>
-int my_str_isnum(char const *str);
+#include<stdlib.h>
+int my_strlen(char const *str);
 
-int my_str_isalpha(char const *str);
+int my_is_alphanumeric(char c)
+{
+	
+	if((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return 1;
+	else 
+		return 0;
+}
 
 char **my_str_to_word_array(char const *str)
 {
-	int count = 1;
-	while(*str)
+	int len = my_strlen(str);
+	char **result;
+	result = malloc(sizeof(char *) * (len + 1));
+	result[0] = malloc(len + 1);
+	int i = 0, j = 0, s = 0, flag = 0;
+	while(str[s])
 	{
-		if(my_str_isnum(*str) == 0 && my_str_isalpha(*str) == 0)
-			count ++;
+		if(my_is_alphanumeric(str[s]))
+		{	
+			flag = 1;
+			result[i][j] = str[s];
+			j ++;
+		}
+		else
+		{
+			if(flag == 1)
+			{
+				result[i + 1] = malloc(len + 1);
+				i ++; j = 0; flag = 0;
+			}
+		}
+		s ++;
 	}
-	char **result = (char *)malloc(count + 1);
-	char **p = result;
-	int i = 0;
-	while(*str && **p)
-	{
-		char *wp = *p[i];
-		if(my_str_isnum(*str) == 0 && my_str_isalpha(*str) == 0)
-			p ++;
-	}
+	return result;
 }

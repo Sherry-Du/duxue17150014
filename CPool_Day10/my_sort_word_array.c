@@ -1,4 +1,4 @@
-
+#include "./lib/my/my.h"
 int my_sort_word_array(char **tab)
 {
 	int len = 0;

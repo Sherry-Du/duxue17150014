@@ -7,4 +7,5 @@ char *my_strcpy(char *dest, char const *src)
 		dest ++;
 	}
 	*dest='\0';
+	return dest;
 }

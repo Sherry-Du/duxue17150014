@@ -1,8 +1,19 @@
+SRC	=	calc.c \
+		do_op.c
 
-all:compile
+OBJ	=	$(SRC:.c=.o)
+
+NAME 	=	do-op
+
+all:	$(NAME)
  
-compile:
-	gcc do_op.c -o do-op -L./lib -lmy
+$(NAME):	$(OBJ)
+	gcc -o $(NAME) $(OBJ) -L./lib -lmy
 	
 clean:
-	rm -r do-op
+	rm -f *.o
+
+fclean: clean
+	rm -f $(NAME)
+
+re:	fclean all

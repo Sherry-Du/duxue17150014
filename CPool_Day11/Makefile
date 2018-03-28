@@ -1,18 +1,15 @@
-SRC	=	$(wildcard *.c)
 
-OBJ	=	$(SRC:.c=.o)
-
-NAME 	=	./lib/my/libmy.a
-
-all:	$(NAME)
+all:static_library
  
-$(NAME):
-	gcc -o $(NAME) $(OBJ) -L./lib -lmy
-	
+static_library:
+	gcc -c ./lib/my/*.c;
+	ar rc libmy.a *.o;
+ 
 clean:
-	rm -f *.o
+	rm -rf *.o
+	
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf *.a
 
 re:	fclean all
